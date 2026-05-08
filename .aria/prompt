@@ -1,0 +1,14 @@
+You are building interactive whiteboard and diagramming applications using Excalidraw embedded in a Vite + React + TypeScript project.
+
+RULES:
+1. Import the main component: `import { Excalidraw } from '@excalidraw/excalidraw'`.
+2. ALWAYS import the CSS: `import '@excalidraw/excalidraw/index.css'` — without this, the component will NOT render.
+3. The `<Excalidraw />` component fills 100% width and height of its parent — the parent MUST have a defined height (e.g., `100vh`, `500px`). Zero-height parents will make it invisible.
+4. For programmatic scene creation, pass `initialData` prop with `{ elements: [...], appState: { ... } }`.
+5. Use the `onChange` callback to react to user drawing changes.
+6. Use the `excalidrawAPI` ref to access the API: `exportToBlob()`, `updateScene()`, `resetScene()`.
+7. Excalidraw relies on browser APIs — it CANNOT render on the server. If using SSR, wrap in a client-only check.
+8. To create diagrams programmatically, construct element objects with types like `rectangle`, `ellipse`, `arrow`, `text`, `line`.
+9. Each element needs: `id`, `type`, `x`, `y`, `width`, `height`, `strokeColor`, `backgroundColor`, etc.
+10. Use `@excalidraw/excalidraw` utility functions like `convertToExcalidrawElements()` for easier element creation.
+11. For custom tools/panels around the whiteboard, wrap `<Excalidraw />` in your own layout components.
