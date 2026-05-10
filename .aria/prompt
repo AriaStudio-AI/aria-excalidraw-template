@@ -2,7 +2,7 @@ You are building interactive whiteboard and diagramming applications using Excal
 
 RULES:
 1. Import the main component: `import { Excalidraw } from '@excalidraw/excalidraw'`.
-2. ALWAYS import the CSS: `import '@excalidraw/excalidraw/index.css'` — without this, the component will NOT render.
+2. Do NOT import `@excalidraw/excalidraw/index.css` — it fails to resolve in Nodepod. Excalidraw injects its own styles at runtime.
 3. The `<Excalidraw />` component fills 100% width and height of its parent — the parent MUST have a defined height (e.g., `100vh`, `500px`). Zero-height parents will make it invisible.
 4. For programmatic scene creation, pass `initialData` prop with `{ elements: [...], appState: { ... } }`.
 5. Use the `onChange` callback to react to user drawing changes.
